@@ -1,13 +1,12 @@
 package tomocomd;
 
-import weka.core.Instances;
-import weka.core.converters.CSVLoader;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.stream.IntStream;
+import weka.core.Instances;
+import weka.core.converters.CSVLoader;
 
 public class CSVManage {
   private static final String MSG_ACC = "Problems accessing to file %s";
@@ -17,7 +16,7 @@ public class CSVManage {
   }
 
   public static String saveDescriptorMResult(Instances instances, String pathOut)
-      throws AExOpDCSException {
+      throws ModelingException {
     File f = new File(pathOut);
     int cont = 0;
     while (f.exists()) {
@@ -49,13 +48,13 @@ public class CSVManage {
       }
       pw.close();
     } catch (FileNotFoundException ex) {
-      throw AExOpDCSException.ExceptionType.CSV_FILE_WRITING_EXCEPTION.get(
+      throw ModelingException.ExceptionType.CSV_FILE_WRITING_EXCEPTION.get(
           String.format("Problems writing the new subset in file:%s", pathOut), ex);
     }
     return f.getAbsolutePath();
   }
 
-  public static Instances loadCSV(String path) throws AExOpDCSException {
+  public static Instances loadCSV(String path) throws ModelingException {
 
     try {
       CSVLoader l = new CSVLoader();
@@ -63,7 +62,7 @@ public class CSVManage {
       l.setFieldSeparator(",");
       return l.getDataSet();
     } catch (IOException ex) {
-      throw AExOpDCSException.ExceptionType.CSV_FILE_LOADING_EXCEPTION.get(
+      throw ModelingException.ExceptionType.CSV_FILE_LOADING_EXCEPTION.get(
           String.format(MSG_ACC, path), ex);
     }
   }

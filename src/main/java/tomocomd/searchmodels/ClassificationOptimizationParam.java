@@ -6,9 +6,13 @@
 package tomocomd.searchmodels;
 
 /**
- *
  * @author potter
  */
 public enum ClassificationOptimizationParam {
-    ACC_TRAIN,ACC_TEST,ACC_MEAN, MCC_TRAIN, MCC_TEST, MCC_MEAN;
+  ACC_TRAIN,
+  ACC_TEST,
+  ACC_MEAN,
+  MCC_TRAIN,
+  MCC_TEST,
+  MCC_MEAN;
 }
