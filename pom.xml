@@ -13,7 +13,7 @@
     <!-- Configuración del SCM para el buildnumber-maven-plugin -->
     <scm>
         <connection>scm:git:https://github.com/cicese-biocom/best-first-guided-modeling.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:tu_usuario/tu_repositorio.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com:cicese-biocom/best-first-guided-modeling.git</developerConnection>
         <url>https://github.com/cicese-biocom/best-first-guided-modeling</url>
         <tag>HEAD</tag>
     </scm>
@@ -95,6 +95,7 @@
                     <doCheck>true</doCheck>
                     <doUpdate>true</doUpdate>
                     <branch>main</branch>
+                    <scmUrl>${scm.developerConnection}</scmUrl>
                 </configuration>
             </plugin>
 
