@@ -1,25 +1,24 @@
 package tomocomd;
 
-
-public class AExOpDCSException extends RuntimeException {
+public class ModelingException extends RuntimeException {
   final ExceptionType type;
 
-  public AExOpDCSException(ExceptionType type) {
+  public ModelingException(ExceptionType type) {
     super(type.getMessage());
     this.type = type;
   }
 
-  public AExOpDCSException(ExceptionType type, Throwable cause) {
+  public ModelingException(ExceptionType type, Throwable cause) {
     super(type.getMessage(), cause);
     this.type = type;
   }
 
-  public AExOpDCSException(ExceptionType type, Throwable cause, String message) {
+  public ModelingException(ExceptionType type, Throwable cause, String message) {
     super(type.formatMessage(message), cause);
     this.type = type;
   }
 
-  public AExOpDCSException(ExceptionType type, String message) {
+  public ModelingException(ExceptionType type, String message) {
     super(type.formatMessage(message));
     this.type = type;
   }
@@ -34,7 +33,7 @@ public class AExOpDCSException extends RuntimeException {
     private final String message;
 
     ExceptionType(String s) {
-        this.message = s;
+      this.message = s;
     }
 
     public String getMessage() {
@@ -45,20 +44,20 @@ public class AExOpDCSException extends RuntimeException {
       return String.format("%s: %s", this.message, message);
     }
 
-    public AExOpDCSException get() {
-      return new AExOpDCSException(this);
+    public ModelingException get() {
+      return new ModelingException(this);
     }
 
-    public AExOpDCSException get(String message) {
-      return new AExOpDCSException(this, message);
+    public ModelingException get(String message) {
+      return new ModelingException(this, message);
     }
 
-    public AExOpDCSException get(Throwable cause) {
-      return new AExOpDCSException(this, cause);
+    public ModelingException get(Throwable cause) {
+      return new ModelingException(this, cause);
     }
 
-    public AExOpDCSException get(String message, Throwable cause) {
-      return new AExOpDCSException(this, cause, message);
+    public ModelingException get(String message, Throwable cause) {
+      return new ModelingException(this, cause, message);
     }
   }
 }
