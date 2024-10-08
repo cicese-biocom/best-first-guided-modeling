@@ -10,14 +10,6 @@
     <name>best-first-guided-modeling</name>
     <url>http://maven.apache.org</url>
 
-    <!-- Configuración del SCM para el buildnumber-maven-plugin -->
-    <scm>
-        <connection>scm:git:https://github.com/cicese-biocom/best-first-guided-modeling.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:cicese-biocom/best-first-guided-modeling.git</developerConnection>
-        <url>https://github.com/cicese-biocom/best-first-guided-modeling</url>
-        <tag>HEAD</tag>
-    </scm>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -79,26 +71,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin para generar número de compilación secuencial -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>create</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <doCheck>true</doCheck>
-                    <doUpdate>true</doUpdate>
-                    <branch>main</branch>
-                    <scmUrl>${scm.developerConnection}</scmUrl>
-                </configuration>
-            </plugin>
-
             <!-- Plugin para crear el jar con dependencias -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -107,7 +79,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <finalName>best-first-guided-modeling-${project.version}-${buildNumber}</finalName>
+                    <finalName>best-first-guided-modeling</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
