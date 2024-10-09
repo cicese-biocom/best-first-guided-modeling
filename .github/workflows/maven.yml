@@ -36,8 +36,8 @@ jobs:
       - name: Create JAR artifact
         uses: actions/upload-artifact@v3
         with:
-          name: best-first-guided-modeling-${{ env.version }}.jar
-          path: target/best-first-guided-modeling-${{ env.version }}.jar
+          name: best-first-guided-modeling-1.0.${{ env.version }}.jar
+          path: target/best-first-guided-modeling-1.0.${{ env.version }}.jar
         env:
           GITHUB_ACTOR: ${{ secrets.USER_NAME }}
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -46,11 +46,15 @@ jobs:
         run: |
           git tag -a "v1.0.${{ env.version }}" -m "Release version 1.0.${{ env.version }}"
           git push origin "v1.0.${{ env.version }}"
+        env:
+          GITHUB_ACTOR: ${{ secrets.USER_NAME }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
 
       - name: Create a GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: target/best-first-guided-modeling-${{ env.version }}.jar
+          files: target/best-first-guided-modeling-1.0.${{ env.version }}.jar
           tag_name: "v1.0.${{ env.version }}"
         env:
           GITHUB_ACTOR: ${{ secrets.USER_NAME }}
