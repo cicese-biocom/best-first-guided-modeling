@@ -2,6 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.release>1.0</version.release>
+    </properties>
+
     <groupId>tomocomd</groupId>
     <artifactId>best-first-guided-modeling</artifactId>
     <version>${version.release}</version>
@@ -10,10 +16,6 @@
     <name>best-first-guided-modeling</name>
     <url>http://maven.apache.org</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.release>1.0</version.release>
-    </properties>
 
     <dependencies>
         <dependency>
