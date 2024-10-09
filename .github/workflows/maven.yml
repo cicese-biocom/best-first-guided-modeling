@@ -46,15 +46,15 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-#    - name: Create JAR artifact
-#      uses: actions/upload-artifact@v3
-#      with:
-#        name: best-first-guided-modeling-${{ env.version }}.jar
-#        path: target/best-first-guided-modeling-${{ env.version }}.jar
+    - name: Create JAR artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: best-first-guided-modeling-${{ env.version }}.jar
+        path: target/best-first-guided-modeling-${{ env.version }}.jar
 
-#    - name: Create a GitHub Release
-#      uses: softprops/action-gh-release@v1
-#      with:
-#        files: target/best-first-guided-modeling-${{ env.version }}.jar
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create a GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: target/best-first-guided-modeling-${{ env.version }}.jar
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
