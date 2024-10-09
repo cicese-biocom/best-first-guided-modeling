@@ -39,11 +39,6 @@ jobs:
           name: best-first-guided-modeling-${{ env.version }}.jar
           path: target/best-first-guided-modeling-${{ env.version }}.jar
 
-      - name: Set up Git user
-        run: |
-          git config --global user.email "lgarciaag89@gmail.com"
-          git config --global user.name "lgarciaag89"
-
       - name: Create a Git tag
         run: |
           git tag -a "v1.0.${{ env.version }}" -m "Release version 1.0.${{ env.version }}"
@@ -55,4 +50,5 @@ jobs:
           files: target/best-first-guided-modeling-${{ env.version }}.jar
           tag_name: "v1.0.${{ env.version }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ secrets.USER_NAME }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
