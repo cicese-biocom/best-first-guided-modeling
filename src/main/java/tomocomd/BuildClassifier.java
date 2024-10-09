@@ -26,9 +26,7 @@ import weka.core.SelectedTag;
 import weka.core.neighboursearch.LinearNNSearch;
 import weka.core.neighboursearch.NearestNeighbourSearch;
 
-/**
- * @author potter
- */
+/** @author potter */
 public class BuildClassifier {
   private BuildClassifier() {
     throw new IllegalStateException("BuildClassifier class");

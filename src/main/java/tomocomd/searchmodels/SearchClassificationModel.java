@@ -18,9 +18,7 @@ import weka.classifiers.Classifier;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
 
-/**
- * @author potter
- */
+/** @author potter */
 public class SearchClassificationModel extends ASearchModel {
 
   private static final String FORMAT_HEAD = "%s,%s";

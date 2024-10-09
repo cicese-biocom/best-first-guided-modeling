@@ -9,9 +9,7 @@ import java.util.Arrays;
 import tomocomd.ModelingException;
 import weka.classifiers.AbstractClassifier;
 
-/**
- * @author potter
- */
+/** @author potter */
 public class ClassificationModelInfo {
 
   private AbstractClassifier clas;
