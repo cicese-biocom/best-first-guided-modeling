@@ -5,9 +5,7 @@
  */
 package tomocomd.searchmodels;
 
-/**
- * @author lgarc
- */
+/** @author lgarc */
 public enum RegressionOptimizationParam {
   Q2train,
   Q2Ext,

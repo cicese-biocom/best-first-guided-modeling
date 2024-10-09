@@ -5,9 +5,7 @@
  */
 package tomocomd.searchmodels;
 
-/**
- * @author potter
- */
+/** @author potter */
 public enum ClassificationOptimizationParam {
   ACC_TRAIN,
   ACC_TEST,
