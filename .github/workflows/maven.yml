@@ -28,16 +28,19 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-#    - name: Get version from commits count
-#      id: versioning
-#      run: |
-#        VERSION=$(git rev-list --count HEAD)
-#        echo "Version: $VERSION"
-#        echo "version=$VERSION" >> $GITHUB_ENV
-#
-#    - name: Update version in POM
-#      run: |
-#        sed -i "s/<version>.*<\/version>/<version>1.0.${{ env.version }}<\/version>/" pom.xml
+    - name: Get version from commits count
+      id: versioning
+      run: |
+        VERSION=$(git rev-list --count HEAD)
+        echo "Version: $VERSION"
+        echo "version=$VERSION" >> $GITHUB_ENV
+
+    - name: Update version in POM
+      run: |
+        sed -i "s/<version>.*<\/version>/<version>1.0.${{ env.version }}<\/version>/" pom.xml
+
+    - name: Show pom.xml
+      run: cat pom.xml
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml

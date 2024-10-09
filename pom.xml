@@ -112,31 +112,19 @@
                 </executions>
             </plugin>
 
+<!--             Formateo de código-->
             <plugin>
-                <groupId>net.revelc.code</groupId>
-                <artifactId>impsort-maven-plugin</artifactId>
-                <version>1.6.2</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.codehaus.plexus</groupId>
-                        <artifactId>plexus-utils</artifactId>
-                        <version>3.5.1</version>
-                    </dependency>
-                </dependencies>
+                <groupId>com.spotify.fmt</groupId>
+                <artifactId>fmt-maven-plugin</artifactId>
+                <version>2.16</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-            <!-- Formateo de código -->
-<!--            <plugin>-->
-<!--                <groupId>com.spotify.fmt</groupId>-->
-<!--                <artifactId>fmt-maven-plugin</artifactId>-->
-<!--                <version>2.16.1</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>format</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
         </plugins>
     </build>
 </project>
