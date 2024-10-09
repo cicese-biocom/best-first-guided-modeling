@@ -42,6 +42,10 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
+      - name: Rename JAR file with version
+        run: |
+          mv target/best-first-guided-modeling.jar target/best-first-guided-modeling-1.0.${{ env.version }}.jar
+
       - name: Create JAR artifact
         uses: actions/upload-artifact@v3
         with:
