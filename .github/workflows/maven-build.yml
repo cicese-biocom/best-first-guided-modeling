@@ -44,7 +44,7 @@ jobs:
         run: rm -rf ~/.m2/repository
 
       - name: Build project with Maven
-        run: mvn clean install -U
+        run: mvn clean install -e -X
 
 
       - name: Create JAR artifact
