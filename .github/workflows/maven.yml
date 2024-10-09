@@ -38,6 +38,9 @@ jobs:
         with:
           name: best-first-guided-modeling-${{ env.version }}.jar
           path: target/best-first-guided-modeling-${{ env.version }}.jar
+        env:
+          GITHUB_ACTOR: ${{ secrets.USER_NAME }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Create a Git tag
         run: |
