@@ -36,8 +36,16 @@ jobs:
         run: |
           sed -i "s/<version>.*<\/version>/<version>1.0.${{ env.version }}<\/version>/" pom.xml
 
+      - name: maven version
+        run: mvn -v
+
+
+      - name: Clear maven cache
+        run: rm -rf ~/.m2/repository
+
       - name: Build project with Maven
-        run: mvn clean package -DskipTests
+        run: mvn clean install -e -X
+
 
       - name: Create JAR artifact
         uses: actions/upload-artifact@v3
