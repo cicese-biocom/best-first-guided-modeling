@@ -4,12 +4,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.release>1.0</version.release>
     </properties>
 
     <groupId>tomocomd</groupId>
     <artifactId>best-first-guided-modeling</artifactId>
-    <version>${version.release}</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>best-first-guided-modeling</name>

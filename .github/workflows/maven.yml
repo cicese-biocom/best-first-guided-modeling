@@ -37,7 +37,8 @@ jobs:
 
     - name: Update version in POM
       run: |
-        sed -i "s/<version.release>.*<\/version.release>/<version.release>1.0.${{ env.version }}<\/version.release>/" pom.xml
+        sed -i "/<artifactId>best-first-guided-modeling<\/artifactId>/!b;n;c<version>1.0.${{ env.version }}</version>" pom.xml
+
 
     - name: Show pom.xml
       run: cat pom.xml
