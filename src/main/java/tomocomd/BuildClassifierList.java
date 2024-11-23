@@ -13,8 +13,9 @@ public class BuildClassifierList {
 
   public static List<AbstractClassifier> getclassifierList(
       String[] models, boolean isClassification) {
-    Optional<String> hasExists = Arrays.stream(models).filter(model->model.equals("all")).findFirst();
-    if(hasExists.isPresent()){
+    Optional<String> hasExists =
+        Arrays.stream(models).filter(model -> model.equals("all")).findFirst();
+    if (hasExists.isPresent()) {
       return isClassification ? getClassifierList() : getRegressionList();
     }
 
@@ -35,13 +36,13 @@ public class BuildClassifierList {
       case "bayesnet":
         return isClassification ? BuildClassifier.getBayesNet() : null;
       case "gradient":
-        return isClassification ?  BuildClassifier.getGradient() : null;
+        return isClassification ? BuildClassifier.getGradient() : null;
       case "logistic":
-        return isClassification ?  BuildClassifier.getLogistic() : null;
+        return isClassification ? BuildClassifier.getLogistic() : null;
       case "logitboost":
-        return isClassification ?  BuildClassifier.getLogitBoost() : null;
+        return isClassification ? BuildClassifier.getLogitBoost() : null;
       case "simplelogistic":
-        return isClassification ?  BuildClassifier.getsimpleLogistic() : null;
+        return isClassification ? BuildClassifier.getsimpleLogistic() : null;
       case "multibost":
         return isClassification ? BuildClassifier.getMultiBoost() : null;
       case "naivebayes":
@@ -58,40 +59,40 @@ public class BuildClassifierList {
         return isClassification ? BuildClassifier.getSVM() : null;
       case "linerregression":
         return isClassification ? null : BuildClassifier.getRegression();
-        case "j48":
-          return isClassification ? BuildClassifier.getJ48() : null;
+      case "j48":
+        return isClassification ? BuildClassifier.getJ48() : null;
       default:
         return null;
     }
   }
 
-  private static List<AbstractClassifier> getClassifierList(){
+  private static List<AbstractClassifier> getClassifierList() {
     return Arrays.asList(
-            BuildClassifier.getKnnCV(10),
-            BuildClassifier.getRandomForest(),
-            BuildClassifier.getAdaBoostM1(),
-            BuildClassifier.getBayesNet(),
-            BuildClassifier.getGradient(),
-            BuildClassifier.getLogistic(),
-            BuildClassifier.getLogitBoost(),
-            BuildClassifier.getsimpleLogistic(),
-            BuildClassifier.getMultiBoost(),
-            BuildClassifier.getNaiveBayes(),
-            BuildClassifier.getRacedIncrementalLogitBoost(),
-            BuildClassifier.getRandomCommittee(),
-            BuildClassifier.getRandomTree(),
-            BuildClassifier.getSMO(),
-            BuildClassifier.getSVM(),
-            BuildClassifier.getRegression(),
-            BuildClassifier.getJ48());
+        BuildClassifier.getKnnCV(10),
+        BuildClassifier.getRandomForest(),
+        BuildClassifier.getAdaBoostM1(),
+        BuildClassifier.getBayesNet(),
+        BuildClassifier.getGradient(),
+        BuildClassifier.getLogistic(),
+        BuildClassifier.getLogitBoost(),
+        BuildClassifier.getsimpleLogistic(),
+        BuildClassifier.getMultiBoost(),
+        BuildClassifier.getNaiveBayes(),
+        BuildClassifier.getRacedIncrementalLogitBoost(),
+        BuildClassifier.getRandomCommittee(),
+        BuildClassifier.getRandomTree(),
+        BuildClassifier.getSMO(),
+        BuildClassifier.getSVM(),
+        BuildClassifier.getRegression(),
+        BuildClassifier.getJ48());
   }
 
-  private static List<AbstractClassifier> getRegressionList(){
+  private static List<AbstractClassifier> getRegressionList() {
     return Arrays.asList(
-            BuildClassifier.getRegression(),
-            BuildClassifier.getKnnCV(10),
-            BuildClassifier.getRandomForest(),
-            BuildClassifier.getRandomCommittee(),
-            BuildClassifier.getSMOReg());
+        BuildClassifier.getRegression(),
+        BuildClassifier.getKnnCV(10),
+        BuildClassifier.getRandomForest(),
+        BuildClassifier.getRandomCommittee(),
+        BuildClassifier.getSMOReg());
   }
 }
