@@ -108,7 +108,7 @@ public class StartSearchModels {
     if (cmd.hasOption("m")) {
       BuildModels.buildModels(trainFile, tunePath, extFolderPath, act, cmd);
     } else {
-      System.err.println("It is necessary define classifier");
+      System.err.println("It is necessary to define a classifier");
       System.exit(-1);
     }
   }
