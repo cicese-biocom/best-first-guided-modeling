@@ -56,7 +56,7 @@ class BuildClassifierListTest {
 
     List<ClassifierNameEnum> classifierNameList =
         BuildClassifierList.getClassifierNameList(models, false);
-    assertEquals(10, classifierNameList.size());
+    assertEquals(9, classifierNameList.size());
 
     classifierNameList.forEach(
         classifierNameEnum ->
