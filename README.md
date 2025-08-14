@@ -9,6 +9,13 @@ Using a best-first search algorithm to guide the modeling process.
 
 ![Latest Release](https://img.shields.io/github/v/release/cicese-biocom/best-first-guided-modeling?label=latest&style=flat-square)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lgarciaag89_best-first-guided-modeling&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=lgarciaag89_best-first-guided-modeling)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=lgarciaag89_best-first-guided-modeling&metric=bugs)](https://sonarcloud.io/summary/new_code?id=lgarciaag89_best-first-guided-modeling)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=lgarciaag89_best-first-guided-modeling&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=lgarciaag89_best-first-guided-modeling)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=lgarciaag89_best-first-guided-modeling&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=lgarciaag89_best-first-guided-modeling)
+
+[![codecov](https://codecov.io/gh/lgarciaag89/best-first-guided-modeling/graph/badge.svg?token=14NNGVEN4C)](https://codecov.io/gh/lgarciaag89/best-first-guided-modeling)
+
 ## Description
 
 <div style="text-align: justify;">
@@ -52,13 +59,15 @@ usage: cmd [-c] [-e <arg>] [-f] [-h] [-m <arg>] [-o] [-p <arg>] [-pt
  -h,--help                       Displays this help message and exits.
  -m,--models <arg>               Space separate list of desired
                                  strategies. The strategies are:
-                                 [KNN(C,R), RandomForest(C,R),
-                                 Adaboost(C), AdditiveRegression(R),
-                                 BayesNet(C), LogitBoost(C),
-                                 RandomCommittee(C,R),
-                                 SMO-PolyKernel(C,R), SMO-Puk(C,R),
-                                 LinerRegression(R), 
-                                 Bagging-SMO(C,R),  Bagging-KNN(C,R)],
+                                 [KNN(C,R), RANDOMFOREST(C,R),
+                                 ADABOOST(C), ADDITIVEREGRESSION-RF(R),
+                                 ADDITIVEREGRESSION-KNN(R),
+                                 ADDITIVEREGRESSION-SMO(R), BAYESNET(C),
+                                 LOGITBOOST(C), RANDOMCOMMITTEE-RF(C,R),
+                                 RANDOMCOMMITTEE-RT(C,R),
+                                 SMO-POLYKERNEL(C,R), SMO-PUK(C,R),
+                                 LINEAREGRESSION(R), BAGGING-SMO(C,R),
+                                 BAGGING-KNN(C,R)],
                                  where C=Classification, R=Regression.
                                  Use "all" to apply all possible models
  -o,--reorder                    Reverses the order of the attributes.
@@ -137,7 +146,17 @@ The application uses the following strategies to guide the modeling process:
     <td style="text-align: center;"></td>
   </tr>
    <tr>
-    <td>Additive Regression</td>
+    <td>Additive Regression with RF</td>
+    <td style="text-align: center;"></td>
+    <td style="text-align: center;">X</td>
+  </tr>
+   <tr>
+    <td>Additive Regression with KNN</td>
+    <td style="text-align: center;"></td>
+    <td style="text-align: center;">X</td>
+  </tr>
+   <tr>
+    <td>Additive Regression with SMO</td>
     <td style="text-align: center;"></td>
     <td style="text-align: center;">X</td>
   </tr>
@@ -152,7 +171,12 @@ The application uses the following strategies to guide the modeling process:
     <td style="text-align: center;"></td>
   </tr>
 <tr>
-    <td>Random Committee</td>
+    <td>Random Committee with RandomForest</td>
+    <td style="text-align: center;">X</td>
+    <td style="text-align: center;">X</td>
+  </tr>
+<tr>
+    <td>Random Committee with RandomTree</td>
     <td style="text-align: center;">X</td>
     <td style="text-align: center;">X</td>
   </tr>
